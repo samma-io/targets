@@ -132,7 +132,7 @@ spec:
         app: phpmyadmin
     spec:
       containers:
-        - image: wordpress:4.0
+        - image: phpmyadmin:5.0.2
           imagePullPolicy: Always
           name: phpmyadmin
           env:
