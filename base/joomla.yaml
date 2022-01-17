@@ -1,0 +1,116 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: joomla
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: joomla
+  namespace: joomla
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: joomla
+  template:
+    metadata:
+      labels:
+        app: joomla
+    spec:
+      containers:
+        - image: joomla:3.4.5
+          imagePullPolicy: Always
+          name: joomla
+          env:
+            - name: JOOMLA_DB_HOST
+              value: mysql
+            - name: JOOMLA_DB_USER
+              value: joomla
+            - name: JOOMLA_DB_PASSWORD
+              value: joomla
+            - name: JOOMLA_DB_NAME
+              value: joomla
+          ports:
+            - containerPort: 80
+              name: http
+          livenessProbe:
+           httpGet:
+             path: /
+             port: 80
+           initialDelaySeconds: 180
+           periodSeconds: 3
+          readinessProbe:
+           httpGet:
+             path: /
+             port: 80
+           initialDelaySeconds: 180
+           periodSeconds: 3
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: joomla
+  namespace: joomla
+  labels:
+    app: joomla
+spec:
+  type: ClusterIP
+  ports:
+    - port: 82
+      targetPort: 80
+      protocol: TCP
+      name: http
+  selector:
+    app: joomla
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  namespace: joomla
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+        - image: mysql:5.6
+          env:
+            - name: MYSQL_USER
+              value: joomla
+            - name: MYSQL_PASSWORD
+              value: 'joomla'
+            - name: MYSQL_ROOT_PASSWORD
+              value: joomla
+            - name: MYSQL_DATABASE
+              value: joomla
+
+          imagePullPolicy: Always
+          name: mysql
+          ports:
+            - containerPort: 3306
+              name: sql
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+  namespace: joomla
+  labels:
+    app: mysql
+spec:
+  type: ClusterIP
+  ports:
+    - port: 3306
+      targetPort: 3306
+      protocol: TCP
+      name: mysql
+  selector:
+    app: mysql

@@ -1,0 +1,179 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: wordpress
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+  namespace: wordpress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress
+  template:
+    metadata:
+      labels:
+        app: wordpress
+    spec:
+      containers:
+        - image: wordpress:4.0
+          imagePullPolicy: Always
+          name: wordpress
+          env:
+            - name: WORDPRESS_DB_HOST
+              value: mysql
+            - name: WORDPRESS_DB_USER
+              value: wordpress
+            - name: WORDPRESS_DB_PASSWORD
+              value: wordpress
+            - name: WORDPRESS_DB_NAME
+              value: wordpress
+
+          ports:
+            - containerPort: 80
+              name: http
+          livenessProbe:
+           httpGet:
+             path: /
+             port: 80
+           initialDelaySeconds: 180
+           periodSeconds: 3
+          readinessProbe:
+           httpGet:
+             path: /
+             port: 80
+           initialDelaySeconds: 180
+           periodSeconds: 3
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress
+  namespace: wordpress
+  labels:
+    app: wordpress
+spec:
+  type: ClusterIP
+  ports:
+    - port: 82
+      targetPort: 80
+      protocol: TCP
+      name: http
+  selector:
+    app: wordpress
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  namespace: wordpress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+        - image: mysql:5.6
+          env:
+            - name: MYSQL_USER
+              value: wordpress
+            - name: MYSQL_PASSWORD
+              value: 'wordpress'
+            - name: MYSQL_ROOT_PASSWORD
+              value: wordpress
+            - name: MYSQL_DATABASE
+              value: wordpress
+
+          imagePullPolicy: Always
+          name: mysql
+          ports:
+            - containerPort: 3306
+              name: sql
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+  namespace: wordpress
+  labels:
+    app: mysql
+spec:
+  type: ClusterIP
+  ports:
+    - port: 3306
+      targetPort: 3306
+      protocol: TCP
+      name: mysql
+  selector:
+    app: mysql
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phpmyadmin
+  namespace: wordpress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: phpmyadmin
+  template:
+    metadata:
+      labels:
+        app: phpmyadmin
+    spec:
+      containers:
+        - image: wordpress:4.0
+          imagePullPolicy: Always
+          name: phpmyadmin
+          env:
+            - name: PMA_HOST
+              value: mysql
+            - name: MYSQL_USER
+              value: wordpress
+            - name: MYSQL_PASSWORD
+              value: wordpress
+            - name: MYSQL_ROOT_PASSWORD
+              value: wordpress
+
+          ports:
+            - containerPort: 80
+              name: http
+          livenessProbe:
+           httpGet:
+             path: /
+             port: 80
+           initialDelaySeconds: 180
+           periodSeconds: 3
+          readinessProbe:
+           httpGet:
+             path: /
+             port: 80
+           initialDelaySeconds: 180
+           periodSeconds: 3
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: phpmyadmin
+  namespace: wordpress
+  labels:
+    app: phpmyadmin
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8888
+      targetPort: 80
+      protocol: TCP
+      name: http
+  selector:
+    app: phpmyadmin
