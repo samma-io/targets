@@ -177,3 +177,55 @@ spec:
       name: http
   selector:
     app: phpmyadmin
+
+---    
+
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-job-wordpress-4
+  namespace: samma-io
+spec:
+ target: wordpress.wordpress.svc
+ samma_io_id: "11111"
+ samma_io_tags:
+      - wordpress
+      - demo
+---
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-wordpress-4
+  namespace: samma-io
+spec:
+ target: wordpress.wordpress.svc
+ scheduler: "4 19 * * *"
+ samma_io_id: "11111"
+ samma_io_tags:
+      - wordpress
+      - demo
+---
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-job-phpmyadmin
+  namespace: samma-io
+spec:
+ target: phpmyadmin.wordpress.svc
+ samma_io_id: "11111"
+ samma_io_tags:
+      - phpmyadmin
+      - demo
+---
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: demo-phpmyadmin
+  namespace: samma-io
+spec: 
+ target: phpmyadmin.wordpress.svc
+ scheduler: "2 19 * * *"
+ samma_io_id: "11111"
+ samma_io_tags: 
+      - wordpress
+      - demo
