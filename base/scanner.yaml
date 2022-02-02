@@ -5,7 +5,7 @@ metadata:
   name: demo-apache-2-4-17
   namespace: samma-io
 spec: 
- target: apache-2-4-17.apache.svc
+ target: apache-2-4-17.apache.svc.cluster.local
  scheduler: "2 19 * * *"
  samma_io_id: "11111"
  samma_io_tags: 
@@ -18,7 +18,7 @@ metadata:
   name: demo-job-apache-2-4-17
   namespace: samma-io
 spec:
- target: apache-2-4-17.apache.svc
+ target: apache-2-4-17.apache.svc.cluster.local
  samma_io_id: "11111"
  samma_io_tags:
       - apache
@@ -30,7 +30,7 @@ metadata:
   name: demo-apache-2-4-47
   namespace: samma-io
 spec:
- target: apache-2-4-47.apache.svc
+ target: apache-2-4-47.apache.svc.cluster.local
  scheduler: "4 19 * * *"
  samma_io_id: "11111"
  samma_io_tags:
@@ -43,7 +43,7 @@ metadata:
   name: demo-job-apache-2-4-47
   namespace: samma-io
 spec:
- target: apache-2-4-47.apache.svc
+ target: apache-2-4-47.apache.svc.cluster.local
  samma_io_id: "11111"
  samma_io_tags:
       - apache
@@ -57,7 +57,7 @@ metadata:
   name: demo-joomla
   namespace: samma-io
 spec: 
- target: joomla.joomla.svc
+ target: joomla.joomla.svc.cluster.local
  scheduler: "2 23 * * *"
  samma_io_id: "11111"
  samma_io_tags: 
@@ -70,7 +70,7 @@ metadata:
   name: demo-job-joomla
   namespace: samma-io
 spec:
- target: joomla.joomla.svc
+ target: joomla.joomla.svc.cluster.local
  samma_io_id: "11111"
  samma_io_tags:
       - joomla
@@ -82,7 +82,7 @@ metadata:
   name: demo-joomla-mysql
   namespace: samma-io
 spec:
- target: mysql.joomla.svc
+ target: mysql.joomla.svc.cluster.local
  scheduler: "4 23 * * *"
  samma_io_id: "11111"
  samma_io_tags:
@@ -95,7 +95,7 @@ metadata:
   name: demo-job-mysql-joomla
   namespace: samma-io
 spec:
- target: mysql.joomla.svc
+ target: mysql.joomla.svc.cluster.local
  samma_io_id: "11111"
  samma_io_tags:
       - joomla
@@ -108,7 +108,7 @@ metadata:
   name: demo-nginx-1-17-4
   namespace: samma-io
 spec: 
- target: nginx-1-17-4.nginx.svc
+ target: nginx-1-17-4.nginx.svc.cluster.local
  scheduler: "2 16 * * *"
  samma_io_id: "11111"
  samma_io_tags: 
@@ -121,7 +121,7 @@ metadata:
   name: demo-job-nginx-1-17-4
   namespace: samma-io
 spec:
- target: nginx-1-17-4.nginx.svc
+ target: nginx-1-17-4.nginx.svc.cluster.local
  samma_io_id: "11111"
  samma_io_tags:
       - nginx
@@ -133,7 +133,7 @@ metadata:
   name: demo-nginx-1-9-5
   namespace: samma-io
 spec:
- target: nginx-1-9-5.nginx.svc
+ target: nginx-1-9-5.nginx.svc.cluster.local
  scheduler: "4 19 * * *"
  samma_io_id: "11111"
  samma_io_tags:
@@ -146,7 +146,7 @@ metadata:
   name: demo-job-nginx-1-9-5
   namespace: samma-io
 spec:
- target: nginx-1-9-5.nginx.svc
+ target: nginx-1-9-5.nginx.svc.cluster.local
  samma_io_id: "11111"
  samma_io_tags:
       - nginx
@@ -160,7 +160,7 @@ metadata:
   name: demo-job-wordpress-4
   namespace: samma-io
 spec:
- target: wordpress.wordpress.svc
+ target: wordpress.wordpress.svc.cluster.local
  samma_io_id: "11111"
  samma_io_tags:
       - wordpress
@@ -172,7 +172,7 @@ metadata:
   name: demo-wordpress-4
   namespace: samma-io
 spec:
- target: wordpress.wordpress.svc
+ target: wordpress.wordpress.svc.cluster.local
  scheduler: "4 19 * * *"
  samma_io_id: "11111"
  samma_io_tags:
@@ -185,7 +185,7 @@ metadata:
   name: demo-job-phpmyadmin
   namespace: samma-io
 spec:
- target: phpmyadmin.wordpress.svc
+ target: phpmyadmin.wordpress.svc.cluster.local
  samma_io_id: "11111"
  samma_io_tags:
       - phpmyadmin
@@ -197,7 +197,7 @@ metadata:
   name: demo-phpmyadmin
   namespace: samma-io
 spec: 
- target: phpmyadmin.wordpress.svc
+ target: phpmyadmin.wordpress.svc.cluster.local
  scheduler: "2 19 * * *"
  samma_io_id: "11111"
  samma_io_tags: 
