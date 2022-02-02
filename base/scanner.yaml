@@ -1,0 +1,205 @@
+---    
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: demo-apache-2-4-17
+  namespace: samma-io
+spec: 
+ target: apache-2-4-17.apache.svc
+ scheduler: "2 19 * * *"
+ samma_io_id: "11111"
+ samma_io_tags: 
+      - apache
+      - demo
+---
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-job-apache-2-4-17
+  namespace: samma-io
+spec:
+ target: apache-2-4-17.apache.svc
+ samma_io_id: "11111"
+ samma_io_tags:
+      - apache
+      - demo
+---
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-apache-2-4-47
+  namespace: samma-io
+spec:
+ target: apache-2-4-47.apache.svc
+ scheduler: "4 19 * * *"
+ samma_io_id: "11111"
+ samma_io_tags:
+      - apache
+      - demo
+---
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-job-apache-2-4-47
+  namespace: samma-io
+spec:
+ target: apache-2-4-47.apache.svc
+ samma_io_id: "11111"
+ samma_io_tags:
+      - apache
+      - demo
+---
+
+---
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: demo-joomla
+  namespace: samma-io
+spec: 
+ target: joomla.joomla.svc
+ scheduler: "2 23 * * *"
+ samma_io_id: "11111"
+ samma_io_tags: 
+      - joomla
+      - demo
+---
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-job-joomla
+  namespace: samma-io
+spec:
+ target: joomla.joomla.svc
+ samma_io_id: "11111"
+ samma_io_tags:
+      - joomla
+      - demo
+---
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-joomla-mysql
+  namespace: samma-io
+spec:
+ target: mysql.joomla.svc
+ scheduler: "4 23 * * *"
+ samma_io_id: "11111"
+ samma_io_tags:
+      - hoomla
+      - demo
+---
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-job-mysql-joomla
+  namespace: samma-io
+spec:
+ target: mysql.joomla.svc
+ samma_io_id: "11111"
+ samma_io_tags:
+      - joomla
+      - demo
+---
+---
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: demo-nginx-1-17-4
+  namespace: samma-io
+spec: 
+ target: nginx-1-17-4.nginx.svc
+ scheduler: "2 16 * * *"
+ samma_io_id: "11111"
+ samma_io_tags: 
+      - nginx
+      - demo
+---
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-job-nginx-1-17-4
+  namespace: samma-io
+spec:
+ target: nginx-1-17-4.nginx.svc
+ samma_io_id: "11111"
+ samma_io_tags:
+      - nginx
+      - demo
+---
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-nginx-1-9-5
+  namespace: samma-io
+spec:
+ target: nginx-1-9-5.nginx.svc
+ scheduler: "4 19 * * *"
+ samma_io_id: "11111"
+ samma_io_tags:
+      - nginx
+      - demo
+---
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-job-nginx-1-9-5
+  namespace: samma-io
+spec:
+ target: nginx-1-9-5.nginx.svc
+ samma_io_id: "11111"
+ samma_io_tags:
+      - nginx
+      - demo
+---
+---    
+
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-job-wordpress-4
+  namespace: samma-io
+spec:
+ target: wordpress.wordpress.svc
+ samma_io_id: "11111"
+ samma_io_tags:
+      - wordpress
+      - demo
+---
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-wordpress-4
+  namespace: samma-io
+spec:
+ target: wordpress.wordpress.svc
+ scheduler: "4 19 * * *"
+ samma_io_id: "11111"
+ samma_io_tags:
+      - wordpress
+      - demo
+---
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-job-phpmyadmin
+  namespace: samma-io
+spec:
+ target: phpmyadmin.wordpress.svc
+ samma_io_id: "11111"
+ samma_io_tags:
+      - phpmyadmin
+      - demo
+---
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: demo-phpmyadmin
+  namespace: samma-io
+spec: 
+ target: phpmyadmin.wordpress.svc
+ scheduler: "2 19 * * *"
+ samma_io_id: "11111"
+ samma_io_tags: 
+      - wordpress
+      - demo
