@@ -214,7 +214,6 @@ metadata:
   namespace: samma-io
 spec: 
  target: bm1.beta.braveops.io
- scheduler: "2 19 * * *"
  samma_io_id: "11111"
  samma_io_tags: 
       - barevops
@@ -223,11 +222,10 @@ spec:
 apiVersion: samma.io/v1  
 kind: Scanner
 metadata: 
-  name: bm1
+  name: bm2
   namespace: samma-io
 spec: 
  target: bm2.beta.braveops.io
- scheduler: "2 19 * * *"
  samma_io_id: "11111"
  samma_io_tags: 
       - barevops
@@ -236,11 +234,10 @@ spec:
 apiVersion: samma.io/v1  
 kind: Scanner
 metadata: 
-  name: bm1
+  name: bm3
   namespace: samma-io
 spec: 
  target: bm3.beta.braveops.io
- scheduler: "2 19 * * *"
  samma_io_id: "11111"
  samma_io_tags: 
       - barevops
@@ -253,7 +250,6 @@ metadata:
   namespace: samma-io
 spec: 
  target: samma.io
- scheduler: "2 19 * * *"
  samma_io_id: "11111"
  samma_io_tags: 
       - samma-io
@@ -266,7 +262,6 @@ metadata:
   namespace: samma-io
 spec: 
  target: uggla.io
- scheduler: "2 19 * * *"
  samma_io_id: "11111"
  samma_io_tags: 
       - uggla-io
@@ -279,7 +274,6 @@ metadata:
   namespace: samma-io
 spec: 
  target: home.ollebo.com
- scheduler: "2 19 * * *"
  samma_io_id: "11111"
  samma_io_tags: 
       - ollebo-com
@@ -292,7 +286,6 @@ metadata:
   namespace: samma-io
 spec: 
  target: vstech.io
- scheduler: "2 19 * * *"
  samma_io_id: "11111"
  samma_io_tags: 
       - vstech-io
@@ -305,7 +298,6 @@ metadata:
   namespace: samma-io
 spec: 
  target: vstech.io
- scheduler: "2 19 * * *"
  samma_io_id: "11111"
  samma_io_tags: 
       - vstech-io
