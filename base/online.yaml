@@ -1,0 +1,123 @@
+#Braveops
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: bm1
+  namespace: samma-io
+spec: 
+ target: bm1.beta.braveops.io
+ samma_io_id: "11111"
+ samma_io_tags: 
+      - barevops
+      - demo
+---
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: bm2
+  namespace: samma-io
+spec: 
+ target: bm2.beta.braveops.io
+ samma_io_id: "11111"
+ samma_io_tags: 
+      - barevops
+      - demo
+---
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: bm3
+  namespace: samma-io
+spec: 
+ target: bm3.beta.braveops.io
+ samma_io_id: "11111"
+ samma_io_tags: 
+      - barevops
+      - demo
+---
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: samma
+  namespace: samma-io
+spec: 
+ target: samma.io
+ samma_io_id: "11111"
+ samma_io_tags: 
+      - samma-io
+      - demo
+---
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: uggla
+  namespace: samma-io
+spec: 
+ target: uggla.io
+ samma_io_id: "11111"
+ samma_io_tags: 
+      - uggla-io
+      - demo
+---
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: ollebo
+  namespace: samma-io
+spec: 
+ target: home.ollebo.com
+ samma_io_id: "11111"
+ samma_io_tags: 
+      - ollebo-com
+      - demo
+---
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: vstech-io
+  namespace: samma-io
+spec: 
+ target: vstech.io
+ samma_io_id: "11111"
+ samma_io_tags: 
+      - vstech-io
+      - demo
+---
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: vstech-io
+  namespace: samma-io
+spec: 
+ target: vstech.io
+ samma_io_id: "11111"
+ samma_io_tags: 
+      - vstech-io
+      - demo
+
+---
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: uggla
+  namespace: samma-io
+spec: 
+ target: uggla.io
+ samma_io_id: "11111"
+ scanners: ['base']
+ samma_io_tags: 
+      - proxy
+      - demo
+---
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: brave
+  namespace: samma-io
+spec: 
+ target: braveops.io
+ samma_io_id: "11111"
+ scanners: ['base']
+ samma_io_tags: 
+      - proxy
+      - demo
