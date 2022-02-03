@@ -206,7 +206,7 @@ spec:
 
 
 ---
-#BRaveops
+#Braveops
 apiVersion: samma.io/v1  
 kind: Scanner
 metadata: 
