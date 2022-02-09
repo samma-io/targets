@@ -5,7 +5,7 @@ metadata:
   name: bm1
   namespace: samma-io
 spec: 
- target: bm1.beta.braveops.io
+ target: 162.55.27.62
  samma_io_id: "11111"
  samma_io_tags: 
       - barevops
@@ -17,7 +17,19 @@ metadata:
   name: bm2
   namespace: samma-io
 spec: 
- target: bm2.beta.braveops.io
+ target: 94.130.16.155
+ samma_io_id: "11111"
+ samma_io_tags: 
+      - barevops
+      - demo
+---
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: bastion
+  namespace: samma-io
+spec: 
+ target: 23.88.62.44
  samma_io_id: "11111"
  samma_io_tags: 
       - barevops
@@ -29,7 +41,7 @@ metadata:
   name: bm3
   namespace: samma-io
 spec: 
- target: bm3.beta.braveops.io
+ target: 94.130.165.148
  samma_io_id: "11111"
  samma_io_tags: 
       - barevops
@@ -44,6 +56,55 @@ spec:
  target: braveops.io
  samma_io_id: "11111"
  scanners: ['base']
+ samma_io_tags: 
+      - proxy
+      - demo
+---
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: uggla
+  namespace: samma-io
+spec: 
+ target: uggla.io
+ samma_io_id: "11111"
+ scanners: ['base']
+ samma_io_tags: 
+      - proxy
+      - demo
+---
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: uggla-all
+  namespace: samma-io
+spec: 
+ target: uggla.io
+ samma_io_id: "11111"
+ samma_io_tags: 
+      - proxy
+      - demo
+---
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: goodtribes
+  namespace: samma-io
+spec: 
+ target: goodtribes.org
+ samma_io_id: "11111"
+ samma_io_tags: 
+      - proxy
+      - demo
+---
+apiVersion: samma.io/v1  
+kind: Scanner
+metadata: 
+  name: ollebo
+  namespace: samma-io
+spec: 
+ target: home.ollebo.com
+ samma_io_id: "11111"
  samma_io_tags: 
       - proxy
       - demo
