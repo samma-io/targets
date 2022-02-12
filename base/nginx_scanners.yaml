@@ -1,0 +1,27 @@
+
+---
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-job-nginx-1-17-4
+  namespace: samma-io
+spec:
+ target: nginx-1-17-4.nginx.svc.cluster.local
+ samma_io_id: "11111"
+ samma_io_tags:
+      - nginx
+      - demo
+
+---
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-job-nginx-1-9-5
+  namespace: samma-io
+spec:
+ target: nginx-1-9-5.nginx.svc.cluster.local
+ samma_io_id: "11111"
+ samma_io_tags:
+      - nginx
+      - demo
+---

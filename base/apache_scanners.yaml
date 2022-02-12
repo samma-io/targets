@@ -1,0 +1,25 @@
+---
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-job-apache-2-4-17
+  namespace: samma-io
+spec:
+ target: apache-2-4-17.apache.svc.cluster.local
+ samma_io_id: "11111"
+ samma_io_tags:
+      - apache
+      - demo
+---
+apiVersion: samma.io/v1
+kind: Scanner
+metadata:
+  name: demo-job-apache-2-4-47
+  namespace: samma-io
+spec:
+ target: apache-2-4-47.apache.svc.cluster.local
+ samma_io_id: "11111"
+ samma_io_tags:
+      - apache
+      - demo
+---
