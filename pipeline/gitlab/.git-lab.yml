@@ -1,0 +1,27 @@
+image: docker:19.03.13
+
+
+#
+#
+#  Bellow is i guess i dont know the gitlab settings so you need to alter bellow to match your gitlab 
+#
+
+variables:
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_TLS_CERTDIR: ""
+  DOCKER_DRIVER: overlay2
+
+
+services:
+  - docker:19.03.13-dind
+build_docker_helm-kubectl:
+  stage: deploy
+  image: sammascanner/pipeline
+  script:
+  - | 
+    #Lets genereate the targets
+    ./addScanner.sh
+    #Lets add the scanners in the deploy folder
+    #kubectl apply -f deploy/
+
+

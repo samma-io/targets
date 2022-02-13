@@ -1,0 +1,6 @@
+version: '3'
+services:
+  operator:
+    build: .
+    image: sammascanner/pipeline
+   
